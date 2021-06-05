@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+/* Material UI */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* End Material UI */
+
+@font-face {
+  font-family: 'GothamPro-Bold';
+  src: url(../../public/assets/fonts/GothamPro-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'GothamPro-Medium';
+  src: url(../../public/assets/fonts/GothamPro-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'GothamPro-Regular';
+  src: url(../../public/assets/fonts/GothamPro.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url(../../public/assets/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url(../../public/assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'SFProDisplay-Bold';
+  src: url(../../public/assets/fonts/SFProDisplay-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'SFProDisplay-Regular';
+  src: url(../../public/assets/fonts/SFProDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica-Neu-Bold';
+  src: url(../../public/assets/fonts/Helvetica-Neu-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica-Neu-Medium';
+  src: url(../../public/assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url(../../public/assets/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-BoldItalic';
+  src: url(../../public/assets/fonts/OpenSans-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url(../../public/assets/fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url(../../public/assets/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url(../../public/assets/fonts/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiboldItalic';
+  src: url(../../public/assets/fonts/OpenSans-SemiboldItalic.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica-Neu-Bold';
+  src: url(../../public/assets/fonts/Helvetica-Neu-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica-Neu-Medium';
+  src: url(../../public/assets/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url(../../public/assets/fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url(../../public/assets/fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url(../../public/assets/fonts/Raleway-Regular.ttf);
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 1440px) and (min-width: 1081px) {
+  /* HD only */
+  html {
+    font-size: 0.8325vw; /* Common metric, 12px at 1440px width, HD */
+  }
+}
+
+@media (max-width: 1080px) and (min-width: 701px) {
+  /* Desktop only */
+  html {
+    font-size: 1.1111vw; /* Common metric, 12px at 1080px width, desktop */
+  }
+}
+
+@media (max-width: 700px) {
+  /* Mobile sizes */
+  html {
+    font-size: 3.8647vw; /* Common metric, 16px at 414px width, mobile */
+  }
+}
+
+body {
+  color: var(--blackGray);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+b {
+  font-family: 'GothamPro-Medium', sans-serif;
+  font-weight: 700;
+  color: var(--blue);
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--darkBlue) !important;
+  text-decoration: underline !important;
+}
+
+textarea:hover,
+textarea:active,
+textarea:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='date']:focus,
+input[type='month']:focus,
+input[type='time']:focus,
+input[type='week']:focus,
+input[type='number']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='color']:focus,
+.uneditable-input:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--alphaBlue);
+  outline: 0 none;
+}
+
+input::-webkit-input-placeholder {
+  text-overflow: 'ellipsis !important';
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px var(--alphaBlue) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
