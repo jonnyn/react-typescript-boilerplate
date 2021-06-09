@@ -1,23 +1,21 @@
 import Amplify from '@aws-amplify/core'
 import { Auth } from 'aws-amplify'
+import CONFIG from './config'
 
 const ID_TOKEN_KEY = 'id_token'
 const ACCESS_TOKEN_KEY = 'access_token'
 const REFRESH_TOKEN_KEY = 'refresh_token'
 
 const config = {
-  identityPoolId: '',
-  region: process.env.REACT_APP_COGNITO_REGION,
-  userPoolId: process.env.REACT_APP_COGNITO_POOL_ID,
-  userPoolWebClientId: process.env.REACT_APP_COGNITO_WEB_CLIENT_ID,
-  callback: process.env.REACT_APP_COGNITO_REDIRECT_URI,
+  region: CONFIG.AWS.REGION,
+  identityPoolId: CONFIG.AWS.COGNITO.IDENTITY_POOL_ID,
+  userPoolId: CONFIG.AWS.COGNITO.USER_POOL_ID,
+  userPoolWebClientId: CONFIG.AWS.COGNITO.CLIENT_ID,
+  callback: CONFIG.AWS.COGNITO.CALLBACK,
 }
 
 const oauth = {
-  domain: String(process.env.REACT_APP_COGNITO_URI)?.replace(
-    /^https?:\/\//,
-    '',
-  ),
+  domain: String(CONFIG.AWS.COGNITO.URI)?.replace(/^https?:\/\//, ''),
   scope: [
     'phone',
     'email',
@@ -25,7 +23,7 @@ const oauth = {
     'openid',
     'aws.cognito.signin.user.admin',
   ],
-  redirectSignIn: process.env.REACT_APP_COGNITO_REDIRECT_URI,
+  redirectSignIn: CONFIG.AWS.COGNITO.REDIRECT_URI,
   redirectSignOut: `${window.location.protocol}//${window.location.host}`,
   responseType: 'code',
 }
@@ -113,10 +111,12 @@ export const loggedIn = async () => {
   try {
     const session = await Auth.currentSession()
     if (session) {
+      // console.log('access token key', session.getAccessToken().getJwtToken())
       localStorage.setItem(
         ACCESS_TOKEN_KEY,
         session.getAccessToken().getJwtToken(),
       )
+      // console.log('id token key', session.getIdToken().getJwtToken())
       localStorage.setItem(ID_TOKEN_KEY, session.getIdToken().getJwtToken())
       return true
     }

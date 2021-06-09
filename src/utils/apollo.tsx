@@ -13,6 +13,7 @@ import {
 import { onError } from '@apollo/client/link/error'
 import { setContext } from '@apollo/client/link/context'
 import { getIdToken } from './auth'
+import CONFIG from './config'
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
@@ -33,7 +34,7 @@ const authLink = setContext(async (_, { headers }) => {
     : { headers }
 })
 const httpLink = createHttpLink({
-  uri: `${process.env.REACT_APP_API_URL}/graphql`,
+  uri: CONFIG.APP.API_URL,
 })
 
 const link = ApolloLink.from([errorLink, authLink, httpLink])
